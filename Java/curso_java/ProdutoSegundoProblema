@@ -1,0 +1,35 @@
+package entites;
+
+public class ProdutoSegundoProblema {
+	
+	public String name;
+	public double price;
+	public int quantity;
+	
+	public double totalValueInStock() {
+		return price * quantity;	
+	}
+	
+	public void addProducts(int quantity) {
+		//this significa uma autoreferencia para o objeto 
+		// o this acessa o  atributo da classe e não o parametro
+		this.quantity  += quantity;// esse ultimo é o parametro		
+	}
+	
+	public void removeProducts(int quantity) {
+		this.quantity -= quantity; 			
+	}
+	
+	public String toString() {
+		return name
+			+ ", $ "
+			+ String.format("%.2f", price)
+			+", "
+			+quantity
+			+" units, Total: $ "
+			+ totalValueInStock();
+	}
+		
+	
+	
+}
